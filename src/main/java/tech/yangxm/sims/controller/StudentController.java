@@ -68,10 +68,9 @@ public class StudentController {
 
     @PutMapping("/student")
     public int updateStudentById(@RequestBody StudentModel sm) {
-
         if (!"".equals(sm.getName())) {
             return -1;
-        }else{
+        } else {
             //
             sm.setName(null);
         }
