@@ -48,3 +48,6 @@ insert into grade(stu_id, cour_id, score)
 values ('stu004', 'c2', 95);
 insert into grade(stu_id, cour_id, score)
 values ('stu004', 'c3', 96);
+
+insert into user(username, password)
+values ('1020372582@qq.com', '123456');

@@ -1,13 +1,11 @@
 package tech.yangxm.sims.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.yangxm.sims.mapper.GradeMapper;
 import tech.yangxm.sims.pojo.Grade;
-import tech.yangxm.sims.pojo.StuClass;
 import tech.yangxm.sims.service.GradeService;
 
 import java.util.List;
