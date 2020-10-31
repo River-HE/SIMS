@@ -42,7 +42,7 @@ rm -r build_temp
 echo '--------------------------------------------------------------------------------------------------------------------'
 
 echo '>>>>>>>>>> 检查sims项目是否启动'
-pid=`ps -ef|grep sims|grep -v grep|awk '{print $2}' `
+pid=`ps -ef|grep sims.jar|grep -v grep|awk '{print $2}' `
 if [ -n "${pid}" ]; then
 	echo ">>>>>>>>>> sims项目已经启动，强制关闭sims"
 	kill -9 $pid
