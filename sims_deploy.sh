@@ -56,7 +56,7 @@ sleep 10s
 echo '--------------------------------------------------------------------------------------------------------------------'
 
 echo '>>>>>>>>>> 检查sims是否启动成功'
-pid=`ps -ef|grep sims|grep -v grep|awk '{print $2}' `
+pid=`ps -ef|grep sims.jar|grep -v grep|awk '{print $2}' `
 if [ -n "${pid}" ]; then
 	echo ">>>>>>>>>> sims项目已经启动，进程号是：${pid}"
 else
