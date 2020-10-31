@@ -6,10 +6,10 @@ INSTALL_HOME=/home/app/sims
 echo '>>>>>>>>>> 部署 Student Information Management System (SIMS) 开始'
 
 if [ ! -d $INSTALL_HOME ]; then
-	echo '安装目录 ${INSTALL_HOME} 不存在，现在创建目录...'
+	echo "安装目录 ${INSTALL_HOME} 不存在，现在创建目录..."
 	mkdir -p $INSTALL_HOME
 else
-	echo '安装目录 ${INSTALL_HOME} 已存在，无需创建目录...'
+	echo "安装目录 ${INSTALL_HOME} 已存在，无需创建目录..."
 fi
 echo '--------------------------------------------------------------------------------------------------------------------'
 
@@ -45,7 +45,7 @@ echo '>>>>>>>>>> 检查sims项目是否启动'
 pid=`ps -ef|grep sims|grep -v grep|awk '{print $2}' `
 if [ -n "${pid}" ]; then
 	echo ">>>>>>>>>> sims项目已经启动，强制关闭sims"
-	kill -9 pid
+	kill -9 $pid
 fi
 echo '--------------------------------------------------------------------------------------------------------------------'
 
@@ -58,11 +58,11 @@ echo '--------------------------------------------------------------------------
 echo '>>>>>>>>>> 检查sims是否启动成功'
 pid=`ps -ef|grep sims|grep -v grep|awk '{print $2}' `
 if [ -n "${pid}" ]; then
-	echo '>>>>>>>>>> sims项目已经启动，进程号是：${pid}'
+	echo ">>>>>>>>>> sims项目已经启动，进程号是：${pid}"
 else
 	echo '>>>>>>>>>> sims项目未启动，请查看日志...'
 fi
-echo '日志路径：${INSTALL_HOME}/Sims_System_Out.log'
+echo "日志路径：${INSTALL_HOME}/Sims_System_Out.log"
 echo '--------------------------------------------------------------------------------------------------------------------'
 
 echo '>>>>>>>>>> 部署 Student Information Management System (SIMS) 结束'
