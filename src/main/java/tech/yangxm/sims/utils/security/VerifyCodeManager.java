@@ -1,5 +1,6 @@
 package tech.yangxm.sims.utils.security;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ public class VerifyCodeManager {
     @Autowired
     private MailService mailService;
 
+    @Getter
     private Map<String, VerifyCode> userCodeMap = new HashMap<>();
 
     public void generateCode(String username) {
@@ -28,9 +30,13 @@ public class VerifyCodeManager {
             log.info("没有这个记录：" + username);
             return false;
         }
-
         VerifyCode verifyCode = userCodeMap.get(username);
-        return verifyCode.validate(code);
+        if (verifyCode.validate(code)) {
+            userCodeMap.remove(username);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void sendEmail(String username, String code) {

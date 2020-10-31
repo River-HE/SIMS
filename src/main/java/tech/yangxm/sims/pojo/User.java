@@ -17,7 +17,7 @@ public class User implements Serializable {
     private String password;
 
     @TableField("is_admin")
-    @TableLogic                 //当该字段在数据库中是数字时，将非0数字转成true，而0转成false
+    //@TableLogic                 //当该字段在数据库中是数字时，将非0数字转成true，而0转成false
     private boolean isAdmin;
 
     @TableField("status")
