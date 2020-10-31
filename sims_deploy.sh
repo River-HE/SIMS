@@ -51,7 +51,7 @@ echo '--------------------------------------------------------------------------
 
 echo '>>>>>>>>>> 后台启动sims'
 cd $INSTALL_HOME
-java nohup -Djasypt.encryptor.password=yangxm1997 -jar sims.jar >> Sims_System_Out.log 2>&1 &
+nohup java -Djasypt.encryptor.password=yangxm1997 -jar sims.jar >> Sims_System_Out.log 2>&1 &
 sleep 10s
 echo '--------------------------------------------------------------------------------------------------------------------'
 
