@@ -6,9 +6,11 @@ public interface UserService {
 
     void sendVerifyCode(String username);
 
-    boolean loginByVerifyCode(String username, String code);
+    String loginByVerifyCode(String username, String code) throws Exception;
 
-    boolean loginByPassword(String username, String pwd);
+    String loginByPassword(String username, String pwd) throws Exception;
 
     boolean toRegister(User user);
+
+    boolean findByUsername(String username);
 }

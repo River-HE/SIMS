@@ -14,7 +14,7 @@ public class GradeController {
     @Autowired
     private GradeService gs;
 
-    @GetMapping("/grade")
+    @GetMapping("/grades")
     public List<Map<String, Object>> findGradesByStuId(@RequestParam("stuId") String stuId) {
         return gs.findGradesByStuId(stuId);
     }
